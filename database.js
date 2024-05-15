@@ -1,4 +1,7 @@
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+dotenv.config()
+const connectionString = process.env.CON_STRING
 
-mongoose.connect('mongodb+srv://admin:1234@blockcluster.0ohvqbb.mongodb.net/blockchain?retryWrites=true&w=majority&appName=blockcluster')
+mongoose.connect(connectionString)
     .then(() => console.log('connection is created'))
